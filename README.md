@@ -1,2 +1,2 @@
-# codeup web excercises
+# codeup web exercises
 ## Author: Midlyn
