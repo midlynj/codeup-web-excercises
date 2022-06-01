@@ -8,7 +8,7 @@ let costOfBrotherBear = prompt("how much for brother bear?")
 let costOfHercules = prompt("how much for hercules?")
 let littleMermaid = 3 * 3, brotherBear = 5 *3, hercules = 3;
 let sumOfMovies = littleMermaid + brotherBear + hercules;
-alert(sumOfMovies)
+alert("The total amount is $" + sumOfMovies)
 
 let googlePay = prompt("how much for google?");
 let googleHours =  prompt("how many hours worked?");
@@ -18,7 +18,7 @@ let faceBookPay = prompt("how much for facebook?");
 let faceBookHours = prompt("how many hours worked?");
 let google = 400 * 6, amazon = 380 * 4, faceBook = 350 * 10;
 let totalPay = google + amazon + faceBook;
-alert(totalPay);
+alert("The total amount you made is $" + totalPay);
 
 let classIsNotFull = true, availability = true;
 let enrollment = classIsNotFull && availability;
