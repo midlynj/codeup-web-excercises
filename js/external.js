@@ -1,14 +1,15 @@
 "use strict"
 console.log("Hello from external JavaScript");
+
+alert("Welcome to my website!");
+
 let userFavColor = prompt("What is your favorite color?");
 alert(userFavColor + " is my favorite too");
 
-let costOfLittleMermaid = prompt("how much for little mermaid?")
-let costOfBrotherBear = prompt("how much for brother bear?")
-let costOfHercules = prompt("how much for hercules?")
-let littleMermaid = 3 * 3, brotherBear = 5 *3, hercules = 3;
-let sumOfMovies = littleMermaid + brotherBear + hercules;
-alert("The total amount is $" + sumOfMovies)
+let costPerDay = 3;
+let moviesToRent = prompt("how many days do you wish to rent this movie?");
+let sumOfMovies = moviesToRent * costPerDay
+alert("The total amount is $" + sumOfMovies);
 
 let googlePay = prompt("how much for google?");
 let googleHours =  prompt("how many hours worked?");
