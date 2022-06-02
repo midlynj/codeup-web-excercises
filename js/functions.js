@@ -75,7 +75,7 @@ function isTwo(x) {
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 function calculateTip(x, y) {
-    let totalTip = x * y
+    let totalTip = x * y;
     console.log(totalTip);
 } calculateTip();
 let tip1 = calculateTip(0.20, 20);
@@ -89,10 +89,10 @@ let tip3 = calculateTip(0.15, 33.42);
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-let totalBill = prompt("Bill total?")
-let totalTip = prompt("What percentage do you want to tip?")
-let toTip = totalBill * totalTip
-alert("Your tip would be $" + toTip)
+let totalBill = prompt("Bill total?");
+let totalTip = prompt("What percentage do you want to tip?");
+let toTip = totalBill * totalTip;
+alert("Your tip would be $" + toTip);
 
 /**
  * TODO:
@@ -110,6 +110,6 @@ alert("Your tip would be $" + toTip)
  */
 function applyDiscount(x,y) {
     let discountPrice =  x - (x * y)
-    console.log(discountPrice)
+    console.log(discountPrice);
 } applyDiscount();
 let totalAfterDiscountIs = applyDiscount(45.99, 0.12);
