@@ -56,9 +56,9 @@ var random = Math.floor((Math.random() * 3) + 1);
  */
 function isTwo(x) {
     if (random === 2) {
-        console.log(true)
+        console.log(true);
     } else {
-        console.log(false)
+        console.log(false);
     }
     console.log(random)
 } isTwo(random);
@@ -109,7 +109,7 @@ alert("Your tip would be $" + toTip);
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 function applyDiscount(x,y) {
-    let discountPrice =  x - (x * y)
+    let discountPrice =  x - (x * y);
     console.log(discountPrice);
 } applyDiscount();
 let totalAfterDiscountIs = applyDiscount(45.99, 0.12);
