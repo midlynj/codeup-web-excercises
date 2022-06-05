@@ -176,5 +176,37 @@ if (askUser) {
     }
 }
 
+function nestediFStatements() {
+    let askUser = confirm("Wanna enter a number?")
+    if (askUser) {
+        let userNum = parseInt(prompt("Enter the number"))
+        console.log(userNum)
+
+        if (isNaN(userNum) === true) {
+            alert("not a number")
+
+        }  			else {
+            console.log("is a number")
+
+            if (userNum % 2 == 0) {
+                alert(userNum + " is even")
+            } else  {
+                alert(userNum + " is odd")
+            }
+            alert(userNum +  100 )
+
+            if (userNum > 0) {
+                alert( userNum + " is positive")
+            } else {
+                alert( userNum +" is negative")
+            }
+        }
+    }
+
+
+
+} nestediFStatements()
+
+
 
 
