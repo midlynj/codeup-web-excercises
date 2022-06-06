@@ -22,9 +22,9 @@
  * console.logging the function's return value
  */
 function analyzeColor(x) {
-   if ("blue") {
+   if (x === "blue") {
        console.log("The sky is blue");
-   } else if ("red") {
+   } else if (x === "red") {
        console.log("Red as a pickle");
    } else {
        console.log("I'm confused on that one");
