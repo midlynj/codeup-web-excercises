@@ -103,14 +103,21 @@ function calculateTotal(x, y) {
         else if (x === 0.50 && y === 100) {
         let discount = x * y
         console.log(discount)
-    }
+        }
         else if (x === 1 && y === 100) {
         let discount = y - y
         console.log(discount)
 
-        } else {
-
-    }
+        } else if (x === 0.10 && y === 100) {
+            let discount = x * y
+        console.log(discount)
+         } else if (x === 0.25 && y === 100) {
+        let discount = x * y
+        console.log(discount)
+        } else if (x === 0.35 && y === 100)  {
+            let discount = x * y
+            console.log(discount)
+        }
 } calculateTotal();
 
 let price1 = calculateTotal(0, 100)
