@@ -71,7 +71,7 @@ switch (randomColor) {
  */
 let favColor = prompt("What's your favorite color?")
 analyzeColor(favColor);
-alert(favColor)
+alert("Your favorite color is " + favColor)
 
 
 /* ########################################################################## */
