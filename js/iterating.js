@@ -68,9 +68,9 @@
     } return2ndIndex([])
 
 
-    function return3rdIndex(randomArray) {
+    function returnLastIndex(randomArray) {
        return randomArray.slice(-1)
-    }return3rdIndex([])
+    }returnLastIndex([])
 
 
 
