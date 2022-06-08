@@ -8,14 +8,14 @@ function showMultiplicationTable() {
 
 for (var i = 1; i < 11; i++) {
     let randomNumbers = Math.floor(Math.random() * 200) + 20;
-    if (randomNumbers % 2 == 0) {
+    if (randomNumbers % 2 === 0) {
         console.log(randomNumbers  + " is even")
         } 		else {
         console.log(randomNumbers  + " is odd")
         }
 }
 
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 9; i++) {
     let x = [1,22,333,4444,55555,666666,7777777,88888888,9999999999]
     console.log(x[i]);
 }
