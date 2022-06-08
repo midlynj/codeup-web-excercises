@@ -58,19 +58,19 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
    function return1Index(randomArray) {
-       return randomArray[0]
+       return randomArray[0];
 
-    }return1Index([])
+    }return1Index([]);
 
 
     function return2ndIndex(randomArray) {
-       return randomArray[1]
-    } return2ndIndex([])
+       return randomArray[1];
+    } return2ndIndex([]);
 
 
     function returnLastIndex(randomArray) {
-       return randomArray.slice(-1)
-    }returnLastIndex([])
+       return randomArray.slice(-1);
+    }returnLastIndex([]);
 
 
 
