@@ -18,5 +18,5 @@ do {
         console.log("I dont have enough cones");
         break;
     }
-} while (allCones == 0)
+} while (allCones !== 0)
 console.log("all cones are sold");
