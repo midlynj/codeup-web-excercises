@@ -20,3 +20,4 @@ do {
     }
 } while (allCones !== 0)
 console.log("all cones are sold");
+
