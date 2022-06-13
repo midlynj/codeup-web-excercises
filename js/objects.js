@@ -64,12 +64,13 @@ person.sayHello()
     //         + " . Discount applied is " + discount[i] + "%. After discount your total is $" + discountTotal[i])
     //
     // }
-var i = -1
+var i = -1;
     shoppers.forEach(function(ele) {
 
         i++;
         console.log(shoppers[i].name + " total is $" + shoppers[i].amount +
-            " . Discount applied is " + discount[i] + "%  . After discount your total is $" + discountTotal[i]);
+            " . Discount applied is " + discount[i]
+            + "%  . After discount your total is $" + discountTotal[i]);
     })
 
 
@@ -89,13 +90,48 @@ var i = -1
      * > console.log(books[0].author.lastName) // "Adams"
      */
     let books = [
-        {title: "The Three Little Pigs", author:{firstName: "Steven", lastName: "Kellog"}
-        {title: "The Teacher From The Black Lagoon", author: {firstName:"Mike", lastName: "Thaler"}
-        {title: "The Cat In The Hat", author:{firstName:"Dr." ,lastName: "Suess"}
-        {title: "Junie B Jones and Her Big Fat Mouth", author:{firstName: "Barbara", lastName:"Park"}
-        {title: "No. David!", author:{firstName: "David", lastName: "Shannon"}
+        {
+            title: "The Three Little Pigs",
+            author:{
+                    firstName: "Steven",
+                    lastName: "Kellog"
+            }
+        },
 
-    ]
+        {
+            title: "The Teacher From The Black Lagoon",
+            author:{
+                    firstName: "Mike",
+                    lastName: "Thaler"
+            }
+        },
+
+        {
+            title: "The Cat In The Hat",
+            author:{
+                    firstName: "Dr.",
+                    lastName: "Suess"
+            }
+        },
+
+        {
+            title: "Junie B Jones and Her Big Fat Mouth",
+            author:{
+                    firstName: "Barbara",
+                    lastName: "Park"
+            }
+        },
+
+        {
+            title: "No. David!",
+            author:{
+                    firstName: "David",
+                    lastName: "Shannon"
+            }
+        }
+
+    ];
+
 
     /**
      * TODO:
@@ -121,6 +157,11 @@ var i = -1
      *      ---
      *      ...
      */
+    for (var i = 0; i < books.length; i++) {
+        console.log("The book number is  #" + Number(i + 1) +". " +
+            "The title is " +books[i].title + ". The author is "
+            + books[i].author.firstName + " " + books[i].author.lastName + ".")
+    };
 
     /**
      * Bonus:
@@ -132,5 +173,7 @@ var i = -1
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+
 
 })();
