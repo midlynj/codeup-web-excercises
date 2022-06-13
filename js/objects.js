@@ -64,15 +64,19 @@ person.sayHello()
     //         + " . Discount applied is " + discount[i] + "%. After discount your total is $" + discountTotal[i])
     //
     // }
-var i = -1;
-    shoppers.forEach(function(ele) {
+// var i = 0;
+//     shoppers.forEach(function(ele) {
+//
+//         i++;
+//         console.log(shoppers[i].name + " total is $" + shoppers[i].amount +
+//             " . Discount applied is " + discount[i]
+//             + "%  . After discount your total is $" + discountTotal[i]);
+//     })
 
-        i++;
-        console.log(shoppers[i].name + " total is $" + shoppers[i].amount +
-            " . Discount applied is " + discount[i]
-            + "%  . After discount your total is $" + discountTotal[i]);
+    shoppers.forEach(function(hi5) {
+    console.log(hi5.name);
+    console.log(hi5.amount);
     })
-
 
 
 
