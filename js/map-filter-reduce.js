@@ -39,51 +39,76 @@ const users = [
 ];
 
 // let userObjects = [];
-// for (var i = 0; i < users.length; i++) {
-//     if (users[i].languages.length >= users[1].languages.length) {
-//         userObjects.push(users[i]);
+// for (var i = 0 ; i < users.length; i++) {
+//     if (users[i].languages.length >= 3) {
+//         userObjects.push(users[i])
 //     }
-// }
-// console.log(userObjects);
+// }console.log(userObjects)
 
 let userObject = users.filter(function(user) {
-    if( user.languages.length >= 3) {
-        return true
+    if (user.languages.length >= 3) {
+        return true;
+    }else {
+        return false;
     }
-    // }
-   return false
-
 })
-console.log(userObject)
+console.log(userObject);
 
-
-// let userEmail = [];
-// for (var i = 0; i < users.length; i ++) {
-//     if (users[i].email !== "") {
-//         userEmail.push(users[i].email);
-//     }
-// } console.log(userEmail);
-
-let userEmail = users.map(function(user) {
+let userMap = users.map(function(user) {
     if (user.email !== "") {
-        return user.email
+        return user.email;
+
+    }
+})
+console.log(userMap);
+
+let userReduce = users.reduce(function (exp,user) {
+    return user.yearsOfExperience +  exp;
+
+},0);
+console.log(userReduce);
+console.log("Each worker has about " + userReduce / users.length + " years of experience");
+
+
+let userLongestEmail = users.reduce(function (longestEmail,user) {
+    if (user.email.length >= longestEmail.length) {
+        return user.email;
+    } else {
+        return longestEmail;
     }
 
-});
-console.log(userEmail)
-
-let totalExp = users.reduce(function (total,user) {
-    return total + user.yearsOfExperience;
-}, 0)
-
-
-
-let allUserNames = users.reduce(function(allUserNamesSoFar, user) {
- console.log("all user names so far  " + allUserNamesSoFar);
-
- return allUserNamesSoFar + user.name + " ,";
 },"")
+console.log(userLongestEmail);
 
-allUserNames = allUserNames.substring(0, allUserNames.length -2)
-console.log(allUserNames);
 
+let userString = users.reduce(function(instructor, user) {
+    if (user.name !== "") {
+        return instructor += user.name + " , ";
+
+    }
+
+    },"")
+console.log(userString)
+
+// let instructors =[];
+//
+// for (var i =0; i < users.length; i++) {
+//     if (users[i].name !=="") {
+//         instructors.push(users[i].name);
+//     }
+// }
+// console.log(" Your instructors are:" + instructors.join(","));
+
+
+
+
+
+// for (var i = 0; i <users.length; i++) {
+//     console.log(users[i].name + " " + users[i].languages)
+// }
+
+let userLanguages = users.reduce(function (languages, user) {
+    return languages += "  " + user.name + " ," + user.languages
+
+},"")
+console.log(userLanguages);
