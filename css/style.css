@@ -1,4 +1,45 @@
 .fancy-header {
-    color: purple; /* single line comment */
+    color: orangered; /* single line comment */
     text-decoration: underline;
+    text-align: center;
+}
+
+body {
+    background-color: bisque;
+    font-family: "Times New Roman";
+    background-image: url("../../codeup-web-exercises/img/download (1).jpeg");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+
+}
+
+.picsForWebsite {
+    width: 350px;
+    height: 350px;
+}
+
+ol,ul {
+    list-style: thai
+}
+
+table, th, td {
+    border-style: ridge;
+    border-width: .3em ;
+    border-collapse: collapse;
+    padding: .7em;
+    padding-right: .4em;
+    padding-left: 2em;
+    border-color: darkgoldenrod;
+}
+
+#link:hover {
+    color: mediumspringgreen;
+}
+#link:active {
+    color: darkmagenta;
+}
+
+div {
+    color: rgb(4, 34, 238);
 }
