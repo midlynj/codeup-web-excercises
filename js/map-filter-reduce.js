@@ -108,7 +108,13 @@ console.log(userString)
 // }
 
 let userLanguages = users.reduce(function (languages, user) {
-    return languages += "  " + user.name + " ," + user.languages
+    return languages + user.languages.join(",") +  ","
 
 },"")
 console.log(userLanguages);
+let x = userLanguages.split(",")
+// console.log(x)
+
+let noRepeatedLanguages = [...new Set(x)];
+
+console.log(noRepeatedLanguages);
