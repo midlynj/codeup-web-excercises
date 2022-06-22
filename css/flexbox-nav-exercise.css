@@ -1,0 +1,50 @@
+.nav-list {
+    display: flex;
+    padding: 0.0001em;
+    background-color: lightgrey;
+    align-items: center;
+    margin-top: 285px;
+
+
+}
+
+ li {
+    margin: 3px;
+     list-style: none;
+
+}
+
+ .nav-list2 {
+     display: flex;
+
+ }
+
+ h2 {
+     margin-top: 9px;
+     flex-grow: 1;
+     margin-left: 9pc;
+
+ }
+
+ body {
+     background-color: black;
+
+ }
+
+ .nav-list {
+     justify-content: flex-start;
+ }
+
+ .nav-list2 {
+    justify-content: flex-end;
+ }
+
+ a {
+     text-decoration: none;
+     color: black;
+ }
+
+
+
+
+
