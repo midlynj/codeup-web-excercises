@@ -1,0 +1,27 @@
+#pizza-world-heading {
+    background-color: white;
+    position: absolute;
+    margin-top: 270px;
+    width: 100%;
+
+}
+
+.nav {
+    display: flex;
+}
+
+#icon {
+    width: 5%;
+    float: right;
+
+}
+
+.btn-outline-success {
+    border: solid dodgerblue;
+    color: dodgerblue;
+}
+
+
+
+
+
