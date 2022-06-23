@@ -65,37 +65,113 @@
             </li>
         </ul>
         <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"></div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-        </div>
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
-        <div class="card">
-            <h5 class="card-header">Choose Size and Crust</h5>
+                <div class="card">
+                    <h5 class="card-header" id="header1">Choose Size and Crust</h5>
 
 
-            <div class="card" >
-                <div class="card-header">
-                    Hand Tossed
+                    <div class="card">
+                        <div class="card-header">
+                            Hand Tossed
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+                            <li class="list-group-item"> <input type="radio"> Small (10")</li>
+                            <li class="list-group-item"> <input type="radio"> Medium (12")</li>
+                        </ul>
+                    </div>
+
+                    <br>
+
+                    <div class="card-header">
+                        Crispy Thin
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+                        <li class="list-group-item"> <input type="radio"> Medium (12")</li>
+                        <li class="list-group-item"> <input type="radio"> Large (14")</li>
+                    </ul>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
-                    <li class="list-group-item"> <input type="radio"> Small (10")</li>
-                    <li class="list-group-item"> <input type="radio"> Medium (12")</li>
-                </ul>
-            </div>
 
-            <br>
 
-            <div class="card-header">
-                Crispy Thin
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
-                <li class="list-group-item"> <input type="radio"> Medium (12")</li>
-                <li class="list-group-item"> <input type="radio"> Large (14")</li>
-            </ul>
+
+
+            </div> <!--first tab ends here -->
+
+
+
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                <div class="card">
+                    <h5 class="card-header" id="header2" >Choose Cheese and Sauce</h5>
+
+
+                    <div class="card" >
+                        <div class="card-header">
+                            Cheese
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">How Much?</li>
+                            <li class="list-group-item"> <select> <option>Normal</option> <option>Extra</option> <option>None</option></select>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <br>
+
+                    <div class="card-header">
+                        Sauce
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">What Type?</li>
+                        <li class="list-group-item"> <select> <option>Tomato</option> <option>Pesto</option> <option>White Garlic</option></select>
+                        <li class="list-group-item">How Much?</li>
+                        <li class="list-group-item"> <select> <option>Normal</option> <option>Extra</option> <option>None</option></select>
+                    </ul>
+                </div>
+
+
+
+            </div> <!--second tab ends here -->
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+                <div class="card">
+                    <h5 class="card-header" id="header3" >Choose Toppings</h5>
+
+
+                    <div class="card" >
+                        <div class="card-header">
+                            Choose Meats
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"> <input type="checkbox"> Beef</li>
+                            <li class="list-group-item"> <input type="checkbox"> Ham</li>
+                            <li class="list-group-item"> <input type="checkbox"> Philly Steak</li>
+                            <li class="list-group-item"> <input type="checkbox"> Bacon</li>
+                        </ul>
+                    </div>
+
+                    <br>
+
+                    <div class="card-header">
+                        Choose Non-Meats
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"> <input type="checkbox"> Green Peppers</li>
+                        <li class="list-group-item"> <input type="checkbox"> Mushrooms</li>
+                        <li class="list-group-item"> <input type="checkbox"> Onions</li>
+                        <li class="list-group-item"> <input type="checkbox"> Jalapeño Peppers</li>
+                    </ul>
+                </div>
+
+
+
+
+            </div> <!-- last tab ends here -->
         </div>
+
+
 
 
 
