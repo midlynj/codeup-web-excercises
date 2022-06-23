@@ -1,8 +1,11 @@
 #pizza-world-heading {
+    opacity: 0.5;
     background-color: white;
     position: absolute;
-    margin-top: 270px;
+    margin-top: -315px;
     width: 100%;
+    text-align: center
+
 
 }
 
@@ -19,6 +22,10 @@
 .btn-outline-success {
     border: solid dodgerblue;
     color: dodgerblue;
+}
+
+#pizza-heading {
+    margin-top: 30px;
 }
 
 
