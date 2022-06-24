@@ -33,6 +33,29 @@
     color: white;
 }
 
+#button1,#button2,#button3 {
+    background-color: blue;
+    color: white;
+    float: right;
+}
+
+.text-primary {
+    border: solid 1px blue;
+}
+
+.text-primary:hover {
+    background-color: lightblue;
+}
+
+#pizza-background {
+   margin-left: 64px;
+}
+
+#icon,#signmeup {
+
+}
+
+
 
 
 
