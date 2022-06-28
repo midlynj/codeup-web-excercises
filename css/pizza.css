@@ -1,10 +1,11 @@
 #pizza-world-heading {
-    opacity: 0.5;
+    opacity: 70%;
     background-color: white;
     position: absolute;
-    margin-top: -315px;
+    margin-top: -215px;
     width: 100%;
-    text-align: center
+    text-align: center;
+    height: 50px;
 
 
 }
@@ -48,7 +49,9 @@
 }
 
 #pizza-background {
-   margin-left: 64px;
+   margin-left: 100px;
+   height: 336px;
+   background-size: cover;
 }
 
 #icon,#signmeup {
