@@ -16,9 +16,9 @@
         logInfo: function (doRounding) {
             // TODO: complete this method.
               if (doRounding === true) {
-               console.log(   Math.round(this.getArea()));
+               console.log(Math.round(Math.PI * (this.radius ** 2)));
               } else {
-                 console.log( this.getArea());
+                 console.log( Math.PI * (this.radius ** 2));
               }
 
             // If doRounding is true, round the result to the nearest integer.
