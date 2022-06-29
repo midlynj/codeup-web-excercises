@@ -14,8 +14,8 @@
     "use strict";
     let y = setInterval(resetBomb,10000)
     function resetBomb() {
-        location.reload()
-        setInterval(resetBomb, 10000)
+        location.reload();
+        setInterval(resetBomb, 10000);
     }
 
     var detonationTimer = 5;
@@ -41,10 +41,10 @@
     // cancel the interval/timeout for updateTimer()
 
     function stopTheBomb() {
-        setTimeout(defuseTheBOM, 1000)
+        setTimeout(defuseTheBOM, 1000);
 
         function defuseTheBOM() {
-            clearInterval(x)
+            clearInterval(x);
 
         }
     }
