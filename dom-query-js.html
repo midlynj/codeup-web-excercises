@@ -8,14 +8,14 @@
 
 <h1 id="main-header">Hello World!</h1>
 <ul>
-    <li data-dbid="1">Item 1</li>
-    <li data-dbid="2">Item 2</li>
-    <li data-dbid="3">Item 3</li>
-    <li data-dbid="4">Item 4</li>
-    <li data-dbid="5">Item 5</li>
+    <li  class="li"  data-dbid="1">Item 1</li>
+    <li   class="li" data-dbid="2">Item 2</li>
+    <li   class="li"  data-dbid="3">Item 3</li>
+    <li   class="li"  data-dbid="4">Item 4</li>
+    <li  class="li"   data-dbid="5">Item 5</li>
 </ul>
 <h2 id="sub-header">Hello Again.</h2>
-<p class="sub-paragraph">
+<p id="t"  class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
     ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -25,6 +25,11 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<button id="btn1">Button1</button>
+<button id="btn2">Button2</button>
+<button id="btn3">Button3</button>
+<button id="btn4">Button4</button>
+
 <script>
     (function() {
         "use strict";
@@ -32,7 +37,7 @@
         var mainHeader =  document.getElementById("main-header");
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "Javascript is Cool";
+        // mainHeader.innerHTML = "Javascript is Cool";
 
 
 
@@ -75,8 +80,48 @@
 
         mission[0].innerHTML = "Mission Accomplished!";
 
+        let button1 = document.getElementById("btn1");
+
+        function javascriptIsCool() {
+            var mainHeader =  document.getElementById("main-header");
+
+            mainHeader.innerHTML = "Javascript is Cool";
+        }
+        button1.addEventListener('click', javascriptIsCool);
+
+        let button2 = document.getElementById("btn2");
+
+        function helloBorder() {
+            document.getElementById("sub-header").style.border = "solid red 10px"
+        }
+        button2.addEventListener('click', helloBorder);
+
+        let button3 = document.getElementById("btn3");
+
+        function listItemModified() {
+            for (var i = 0; i < listItems.length; i++) {
+                document.getElementsByClassName("li")[i].style.listStyle = "trad-chinese-informal"
+            }
+        }
+        button3.addEventListener('click', listItemModified);
+
+        let button4 = document.getElementById("btn4");
+
+        function missionModified() {
+            document.getElementById("t").style.padding = "150px"
+        }
+        button4.addEventListener('click', missionModified);
+
+
+
+
+
+
     })();
 </script>
+
+
+
 
 
 </body></html>
