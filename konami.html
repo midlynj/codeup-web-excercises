@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konami Code</title>
+</head>
+<body id="p1">
+    <h1>Konami Code</h1>
+    <audio id="audio" hidden></audio>
+
+    <script>
+        "use strict";
+
+        let cheatCodeExtraLives = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b","a","Enter"];
+
+        let cheatAttempt  = [];
+
+
+
+        document.addEventListener("keyup", function(event) {
+            console.log(event.key);
+            cheatAttempt.push(event.key);
+            console.log(cheatAttempt);
+            let audio = document.getElementById("audio");
+            if (cheatCodeExtraLives.toString() == cheatAttempt.toString()) {
+                alert("30 lives added");
+                let m = document.getElementById("p1");
+                m.style.backgroundColor = "red";
+                audio.src  = "img/song.mp3"
+                audio.play();
+                console.log(audio)
+            }  else {
+                console.log("no");
+            }
+        });
+
+
+
+
+    </script>
+
+</body>
+</html>
