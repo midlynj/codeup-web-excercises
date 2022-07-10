@@ -86,11 +86,11 @@
 <button id="inviso-toggle">Toggle Visibility</button>
 
 <div style="display: flex; justify-content: space-evenly; margin-top: 20px">
-    <div><img src="img/asta.jpeg"></div>
+    <div><img src="img/asta.jpeg" id="asta"></div>
 
-    <div><img src="img/escanor.jpeg" style="height: 20em; width: 25em"></div>
+    <div><img src="img/escanor.jpeg" id="escanor" style="height: 20em; width: 25em"></div>
 
-    <div><img src="img/levi.webp" style="height: 18em; width: 20em"></div>
+    <div><img src="img/levi.webp" id="levi" style="height: 18em; width: 20em"></div>
 
 </div>
 
@@ -146,6 +146,16 @@
 
         });
     }
+
+    let astaPic = document.getElementById("asta")
+    let escanorPic = document.getElementById("escanor")
+    let leviPic = document.getElementById("levi")
+
+        astaPic.addEventListener("click", function(event) {
+           let astaSrc = this.getAttribute("src")
+            this.setAttribute("src",this.nextElementSibling("src"))
+            this.nextElementSibling.setAttribute("src", astaSrc)
+        });
 
 </script>
 </body>
