@@ -128,9 +128,9 @@
                 let textInput = document.getElementById("text7");
                 let copyText = document.getElementById("p7");
                 textInput.addEventListener("keydown", function (event) {
-                    let savedUserInput = event.key;
+                    let savedUserInput = textInput.value;
                     console.log(savedUserInput);
-                    copyText.innerText += savedUserInput;
+                    copyText.innerText = savedUserInput;
                 });
 
 
