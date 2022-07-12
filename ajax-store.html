@@ -16,20 +16,47 @@
         <th>Categories</th>
     </tr>
     </thead>
-    <tbody id="insertProducts"></tbody>
+    <tbody id="insertProducts">
+
+    </tbody>
 </table>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 <script>
-    (function() {
+    (async function() {
         "use strict";
+        let emptyTitle = []
         // TODO: Create an AJAX GET request for the file under data/inventory.json
+            let tools = await fetch("../data/inventory.json")
+                .then(async function(response) {
+                    if (response.status !== 200) {
+                        console.log("cannot read file");
+                        return ""
+                    } else {
+                        return await response.json()
+                    }
+                });
+        let products = document.getElementById("insertProducts");
+        for (let i = 0; i < tools.length; i++) {
+            console.log(tools[i]);
 
-        // TODO: Take the data from inventory.json and append it to the products table
-        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-        //             its contents and fields
-        //       HINT: You will want to target #insertProducts for your new HTML elements
+            // TODO: Take the data from inventory.json and append it to the products table
+            //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+            //             its contents and fields
+            //       HINT: You will want to target #insertProducts for your new HTML elements
+            emptyTitle.push(tools[i].title)
+            products.innerHTML += `
+                 <tr>
+                        <td>${emptyTitle[i]}</td>
+                        <td>${tools[i].quantity}</td>
+                        <td>${tools[i].price}</td>
+                        <td>${tools[i].categories}</td>
+                </tr>
+            `
+
+
+
+        }
     })();
 </script>
 
