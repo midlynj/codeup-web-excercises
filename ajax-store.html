@@ -16,11 +16,11 @@
         <th>Categories</th>
     </tr>
     </thead>
-    <tbody id="insertProducts">
-
+    <tbody id="insertProducts"><input type="text" id="addNew" placeholder="Item Title">
+        <input type="button" id="button" value="Add new">
     </tbody>
 </table>
-
+<input type="button" id="reset" value="Reset">
 
 <script>
     (async function() {
@@ -36,7 +36,32 @@
                         return await response.json()
                     }
                 });
+        let reset = document.getElementById("reset")
+        reset.addEventListener("click", function (event) {
+            location.reload();
+
+        })
         let products = document.getElementById("insertProducts");
+        let customerAdditions = document.getElementById("addNew")
+
+
+        let button = document.getElementById("button")
+        button.addEventListener("click", function (event) {
+            let a = customerAdditions.value
+            console.log(a)
+            products.innerHTML +=
+            `
+                  <tr>
+                        <td>${a}</td>
+
+                  </tr>
+            `
+
+        })
+        customerAdditions.addEventListener("input", function (event) {
+            let add = customerAdditions.value
+            console.log(add)
+        })
         for (let i = 0; i < tools.length; i++) {
             console.log(tools[i]);
 

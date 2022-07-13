@@ -9,5 +9,45 @@
 
     </div>
 
+
+
+    <script>
+
+            (async function() {
+                "use strict";
+
+                let posts = await fetch("../data/blog.json")
+                    .then(async function(response) {
+                        if (response.status !== 200) {
+                                console.log("Not ready yet")
+                                return ""
+                            } else {
+                                return await response.json()
+                        }
+
+                    });
+                for (let i = 0; i < posts.length; i++) {
+                    console.log(posts[i])
+
+
+                    let statusUpdates = document.getElementById("posts")
+
+                    statusUpdates.innerHTML += `
+
+
+
+                `
+                }
+
+
+
+
+
+            })();
+
+
+
+
+    </script>
 </body>
 </html>
