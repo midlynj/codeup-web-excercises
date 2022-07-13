@@ -30,5 +30,13 @@
     "tool"
   ],
   "price": 10
+}, {
+  "title": "Dual actuator",
+  "quantity": 10,
+  "categories": [
+    "pneumatic tool",
+    "hand tool"
+  ],
+  "price": 30
 }
 ]

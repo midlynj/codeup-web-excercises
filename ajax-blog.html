@@ -2,10 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Blog posts</title>
+    <style>
+        #madari {
+           height: 80px;
+           float: left;
+
+            margin-top: 260px;
+        }
+
+        #k {
+            float: left;
+            height: 120px;
+            margin-left: -100px;
+        }
+
+        #y {
+            float: left;
+            height: 100px;
+            margin-top: 150px;
+            margin-left: -120px;
+        }
+
+        body {
+            background-color: blanchedalmond;
+        }
+
+    </style>
+
+
 </head>
 <body>
     <div id="posts">
+
+        <header></header>
+
+        <section></section>
+
+        <article><img src="img/madari.jpeg" id="madari"><img src="img/kiari.jpeg" id="k"><img src="img/yumeko.jpeg" id="y"></article>
+
+        <footer></footer>
 
     </div>
 
@@ -34,6 +70,13 @@
 
                     statusUpdates.innerHTML += `
 
+                         <header style="color: blue; margin: 5px;">${posts[i].title}</header>
+
+                          <section style="margin: 10px">${posts[i].date}</section>
+
+                           <article style="margin-right: 0;">${posts[i].content}</article>
+
+                            <footer style="float: right; color: goldenrod; ">${posts[i].categories}</footer>
 
 
                 `
