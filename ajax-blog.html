@@ -5,28 +5,70 @@
     <title>Blog posts</title>
     <style>
         #madari {
-           height: 80px;
-           float: left;
+            height: 239px;
+            float: left;
 
-            margin-top: 260px;
+            position: absolute;
+            margin-top: 1440px;
+            margin-left: 1008px;
         }
 
         #k {
-            float: left;
-            height: 120px;
-            margin-left: -100px;
+            height: 239px;
+            margin-top: 541px;
+            position: absolute;
+            margin-left: 1008px;
         }
 
         #y {
-            float: left;
-            height: 100px;
-            margin-top: 150px;
-            margin-left: -120px;
+            height: 239px;
+            margin-top: 993px;
+            position: absolute;
+            margin-left: 1008px;
         }
 
         body {
             background-color: blanchedalmond;
         }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        header {
+            background-color: #666;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+        }
+
+        #back {
+            position: absolute;
+            height: 500px;
+            width: 100%;
+            margin-top: -150px;
+        }
+
+        article {
+            float: left;
+            padding: 20px;
+            width: 70%;
+            background-color: #f1f1f1;
+            height: 300px;
+        }
+
+
+        footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+        }
+
 
     </style>
 
@@ -36,10 +78,9 @@
     <div id="posts">
 
         <header></header>
-
+        <img src="img/back.png" id="back">
         <section></section>
-
-        <article><img src="img/madari.jpeg" id="madari"><img src="img/kiari.jpeg" id="k"><img src="img/yumeko.jpeg" id="y"></article>
+        <img src="img/madari.jpeg" id="madari"><img src="img/kiari.jpeg" id="k"><img src="img/yumeko.jpeg" id="y">
 
         <footer></footer>
 
@@ -70,7 +111,7 @@
 
                     statusUpdates.innerHTML += `
 
-                         <header style="color: blue; margin: 5px;">${posts[i].title}</header>
+                         <header style="color: blue; margin-top: 326px;">${posts[i].title}</header>
 
                           <section style="margin: 10px">${posts[i].date}</section>
 
