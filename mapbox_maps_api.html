@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geocode Examples</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="js/key.js"></script>
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+
+        }
+    </style>
+</head>
+<body>
+
+<h1>My First Mapbox Map!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<!-- Mapbox Geocoder Util Methods -->
+<script src="mapbox-geocoder-utils.js"></script>
+
+<!-- Custom JS -->
+<script>
+
+        mapboxgl.accessToken = mapBoxKey
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 10,
+            center: [-98.485355, 29.42362]
+        });
+
+        // the  geocode method from mapbox-geocoder-utils.js
+        geocode("990 S Federal Hwy, Hallandale Beach, FL 33009", mapBoxKey).then(async function (result) {
+            console.log(await result);
+            map.setCenter(result);
+            map.setZoom(3);
+        });
+
+        geocode("1344 NW 36th St, Miami, FL 33142-5556", mapBoxKey).then(async function (result) {
+            console.log(await result);
+            map.setCenter(result);
+            map.setZoom(3);
+        });
+
+        geocode("849 E Commerce St, San Antonio, TX 78205", mapBoxKey).then(async function (result) {
+            console.log(await result);
+            map.setCenter(result);
+            map.setZoom(3.7);
+        });
+
+        function geocode(address, token = mapBoxKey) {
+            var baseUrl = 'https://api.mapbox.com';
+            var endPoint = '/geocoding/v5/mapbox.places/';
+            return fetch(baseUrl + endPoint + encodeURIComponent(address) + '.json' + "?" + 'access_token=' + token)
+                .then(function(res) {
+                    return res.json();
+                    // to get all the data from the request, comment out the following three lines...
+                }).then(function(data) {
+                    return data.features[0].center;
+
+                });
+        }
+
+
+
+
+            let favRestaurant = [
+                {
+                    address: "1344 NW 36th St, Miami, FL 33142-5556",
+                    popupHTML: "<p>Club Tipico Dominicano, Spaghetti someone grandma put their toes in!!! Highly recommend.</p>"
+
+                },
+                {
+                    address: "849 E Commerce St, San Antonio, TX 78205",
+                    popupHTML: "<p>Fast-food chain serving Mexican-inspired fare such as tacos, quesadillas & nachos.</p>"
+                },
+
+                {
+                    address: "990 S Federal Hwy, Hallandale Beach, FL 33009",
+                    popupHTML: "<p>Steak 'n Shake, SChain known for steakburgers & milkshakes offering a dinerlike space with retro flair\.</p>"
+                }
+
+            ]
+
+
+
+            function placeMarkerAndPopup(info, token, map) {
+                geocode(info.address, token).then(function (coordinates) {
+                    var popup = new mapboxgl.Popup()
+                        .setHTML(info.popupHTML);
+                    var marker = new mapboxgl.Marker()
+                        .setLngLat(coordinates)
+                        .addTo(map)
+                        .setPopup(popup);
+                    // popup.addTo(map);
+                });
+            }
+
+            for (let i = 0; i < favRestaurant.length; i++) {
+                placeMarkerAndPopup(favRestaurant[i], mapBoxKey, map);
+
+            }
+</script>
+</body>
+</html>
