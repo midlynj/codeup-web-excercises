@@ -12,7 +12,10 @@
 </head>
 <body>
 
-    <h1>Paradis</h1>
+    <h1>Stack Nation</h1>
+
+
+    <pre id="lg&ln" ></pre>
 
 <!--    <div class="card" style="width: 18rem;">-->
 <!--        <div class="card-body">-->
@@ -24,7 +27,7 @@
 <!--        </div>-->
 <!--    </div>-->
 
-    <div id="map"></div>
+    <div id="map" style="position: absolute;width: 100%;"></div>
 
     <p id="weather_description" style="margin-top: 280px"></p>
     <div>
@@ -36,8 +39,6 @@
 
     <input type="input" placeholder="search by location" id="city-input" value="fort lauderdale">
     <input type="button" value="location search" id="city-search">
-    <input type="input" id="state-code" placeholder="state code" value="12">
-    <input type="input" id="country-code" value="3166">
     <div id="map-data" style="position: "></div>
 
 
@@ -60,7 +61,7 @@
 
 
 
-             retrieveWeatherInfo()
+             retrieveWeatherInfo(lat.value,lng.value)
 
 
 
@@ -82,15 +83,15 @@
          // });
 
 
-         function retrieveWeatherInfo() {
+         function retrieveWeatherInfo(lat,lng) {
 
 
 
 
              let queryParams = new URLSearchParams({
                  APPID: weatherMapKey,
-                 lat:   Number(lat.value),
-                 lon: Number(lng.value) ,
+                 lat:   Number(lat),
+                 lon: Number(lng) ,
                  units: "imperial"
              });
 
@@ -107,13 +108,26 @@
                      // console.log('Diving in - here is current information: ', data.current);
                      // console.log('A step further - information for tomorrow: ', data.daily[1]);
                      // console.log(data.timezone)
-                     let weatherInfo = document.getElementById("map-data")
+
+                     // map.flyTo({
+                     //     center: [lat,lng],
+                     //     essential: true
+                     // });
+
+
+                         let weatherInfo = document.getElementById("map-data")
+
+                     weatherInfo.innerHTML = ""
+
                      for (let i = 0; i < 5; i++) {
-                         weatherInfo.innerHTML += `<div class="card" style= "width: 18rem">
+
+                         weatherInfo.innerHTML += `<div class="card" style= "width: 18rem;border-radius: 40px;float: left;justify-content: space-evenly">
                              <div class="card-body" >
                                   <h5 class="card-title">${new Date(data.daily[i].dt * 1000)}</h5>
                                  <h6 class="card-subtitle mb-classNamet-muted">Weather Info:  ${data.timezone}</h6>
                                  <p class="card-text">Temp:${data.daily[i].temp.day}  Description: ${data.daily[i].weather[0].description.toUpperCase()} Humidity: ${data.daily[i].humidity}</p>
+
+
                              </div>
                          </div>`
                          // console.log(data.daily[i].temp.day)
@@ -128,15 +142,7 @@
             }
              // `Temp:${data.daily[0].temp.day}  Description: ${data.daily[0].weather[0].description.toUpperCase()} Humidity: ${data.daily[0].humidity}  Time and date: ${Date(data.daily[0].dt)}`
 
-let stateCode = document.getElementById("state-code")
-stateCode.addEventListener("input", function (event){
-    console.log(stateCode.value)
-})
 
-let countryCode = document.getElementById("country-code")
-countryCode.addEventListener("input", function (event){
-    console.log(countryCode.value)
-})
 
 
 
@@ -147,30 +153,9 @@ userCity.addEventListener("input",function (event){
 
 let searchCity = document.getElementById("city-search")
 searchCity.addEventListener("click", function (event) {
-    cityWeather()
+    geocode()
+
 })
-
-        function cityWeather() {
-            let city = new URLSearchParams({
-                APPID: weatherMapKey,
-                q: userCity.value, stateCode, countryCode,
-                units: "imperial"
-            });
-
-
-            fetch("http://api.openweathermap.org/data/2.5/onecall?" + city, {
-                    method: "GET"
-                }
-            ).then(async function (response) {
-                // use await to wait for the json data and then do something with it
-
-
-                const data = await response.json();
-                console.log('The entire response:', data);
-
-            })
-
-        }
 
 
 
@@ -185,6 +170,42 @@ searchCity.addEventListener("click", function (event) {
 
             })
 
+         function geocode(search = userCity.value, token = mapBoxKey) {
+             var baseUrl = 'https://api.mapbox.com';
+             var endPoint = '/geocoding/v5/mapbox.places/';
+             return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+                 .then(function(res) {
+                     return res.json();
+                     // to get all the data from the request, comment out the following three lines...
+                 }).then(function(data) {
+                     let infoFromCoords = data.features[0].center
+                     console.log( data.features[0].center);
+                     retrieveWeatherInfo(data.features[0].center[1], data.features[1].center[0])
+                 });
+         }
+
+
+
+
+         let coordinates = document.getElementById('lg&ln');
+
+
+         let marker = new mapboxgl.Marker({
+             draggable: true
+         })
+             .setLngLat([-98.485355, 29.42362])
+             .addTo(map);
+
+
+
+         function moveMarker() {
+             let lngLat = marker.getLngLat();
+             coordinates.style.display = 'block';
+             coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+             retrieveWeatherInfo(lngLat.lat, lngLat.lng)
+         }
+
+         marker.on('dragend', moveMarker);
 
 
 
