@@ -4,3 +4,9 @@
 img/song.mp3
 key.js
 weatherMap.js
+promise-key.js
+private_constants.js
+config.js
+keys.js
+application.properties
+.env
