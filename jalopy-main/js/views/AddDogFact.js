@@ -1,6 +1,7 @@
 import createView from "../createView.js"
 
 export default function InsertDogView(props) {
+    console.log(props)
     return `
 <form class="container">
     <h1>New Dog Fact</h1>

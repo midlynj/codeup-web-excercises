@@ -56,6 +56,8 @@ export default function quotesView(props) {
   </button>
 </div>
 
+ <a data-link href="/insert-quotes">Add a quote</a>
+
 
 
 
@@ -148,13 +150,13 @@ export function quotesEvents() {
 
 
     }
-    function nextQuote() {
-        let m = document.getElementById("next")
-    m.click()
-
-
-    }
-    setTimeout(nextQuote,5000)
+    // function nextQuote() {
+    //     let m = document.getElementById("next")
+    // m.click()
+    //
+    //
+    // }
+    // setTimeout(nextQuote,5000)
 }
 
 // let m = document.getElementById("next")

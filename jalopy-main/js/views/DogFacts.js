@@ -2,6 +2,7 @@
 // highest level of detail: the HTML function
 // focuses on the HTML for the overall screen
 export default function dogFactsHTMLFunction(props) {
+    console.log(props)
     return `
 <div class="container">
     <h1>Dog Facts</h1>
