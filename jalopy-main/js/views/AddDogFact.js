@@ -17,6 +17,15 @@ export function InsertDogFactEvents() {
     const insertBtn = document.querySelector("#insert-btn");
     insertBtn.addEventListener("click", function(event) {
         const factText = document.querySelector("#dogFactText").value;
+
+        if (factText.length === 0) {
+            console.log("no cant do that")
+            return
+        } else if (factText.length > 1) {
+            factText.trim()
+            console.log(factText.trim())
+        }
+
         const requestOptions = {
             method: "POST",
             headers: {
@@ -35,5 +44,4 @@ export function InsertDogFactEvents() {
                 }
             });
     })
-
 }
