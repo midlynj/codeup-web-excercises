@@ -75,7 +75,15 @@ export default function router(URI) {
 
         '/dogs': {
             returnView: DogFactsView,
-            state: {},
+            state: {
+                dogFacts: {
+                    url: "https://dogfacts.fulgentcorp.com:12250/v1/facts?random=true&limit=10",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Authorization': quote_API_Key
+                    }
+                }
+            },
             uri: '/dogs',
             title: 'Dog Facts',
             viewEvent: DogFactsEvents
@@ -83,7 +91,16 @@ export default function router(URI) {
 
         '/quotes': {
             returnView: quotesView,
-            state: {},
+            state: {
+                quotes: {
+                    url:"https://quotes.fulgentcorp.com:12250/v1/quotes?random=true&limit=10",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Authorization': quote_API_Key
+                    }
+                }
+
+            },
             uri:  '/quotes',
             title: 'Quotes',
             viewEvent: quotesEvents
