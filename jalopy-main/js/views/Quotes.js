@@ -1,4 +1,5 @@
 export default function quotesView(props) {
+    console.log(props)
     return `
 
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -54,7 +55,7 @@ export default function quotesView(props) {
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-     
+
 
 
 
@@ -107,7 +108,7 @@ const quotes = [
 export function quotesEvents() {
     for (let i = 0; i < quotes.length; i++) {
         let quotesWithAuthor = quotes[i].quote + " " + "Author: " + quotes[i].author
-        console.log(quotesWithAuthor)
+        // console.log(quotesWithAuthor)
 
 
         let q1 = document.getElementById("q1")

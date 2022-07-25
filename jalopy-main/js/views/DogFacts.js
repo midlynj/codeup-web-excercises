@@ -9,6 +9,7 @@ export default function dogFactsHTMLFunction(props) {
     ${makeDogFactCards(props.dogFacts)}
     
     <button class="form-control" id="show-fact-btn">Show Facts</button>
+    <a data-link href="/insert-dog-fact">Insert Dog Fact</a>
 </div>
 `;
 }
